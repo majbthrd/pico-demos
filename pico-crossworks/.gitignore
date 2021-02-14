@@ -1,0 +1,5 @@
+*.bak
+pico-crossworks THUMB Debug/*
+pico-crossworks THUMB Release/*
+*.hzs
+Loader/build

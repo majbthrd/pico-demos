@@ -1,0 +1,26 @@
+<!DOCTYPE CrossStudio_Group_Values>
+<propertyGroups>
+  <group short="Section Placement" group="Build Options" long="Select a set of options based on section placement." name="Placement" default="Flash" >
+    <groupEntry name="Flash">
+      <property name="linker_section_placement_file" value="$(ProjectDir)/pico_flash_placement.xml" />
+      <property name="arm_target_loader_applicable_loaders" value="Flash"/>
+      <property name="arm_target_loader_default_loader" value="Flash"/>          
+      <cdefine name="FLASH_PLACEMENT" value="1" />
+    </groupEntry>    
+    <groupEntry name="RAM">
+      <property name="linker_section_placement_file" value="$(ProjectDir)/pico_ram_placement.xml" />
+      <property name="arm_target_loader_applicable_loaders" value=""/>
+      <property name="arm_target_loader_default_loader" value=""/>                        
+      <cdefine name="RAM_PLACEMENT" value="1" />
+    </groupEntry>
+  </group> 
+  <group short="Startup From Reset" group="Build Options" long="Specify whether application will startup up by itself from reset." name="Startup" default="Release Only">
+    <groupEntry name="No" />
+    <groupEntry name="Release Only">
+      <cdefine name="STARTUP_FROM_RESET" configuration="Release" />
+    </groupEntry>
+    <groupEntry name="Yes">
+      <cdefine name="STARTUP_FROM_RESET" />
+    </groupEntry>
+  </group>
+</propertyGroups>
