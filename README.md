@@ -6,3 +6,5 @@
 
 [pico-crossworks](./pico-crossworks/README.md) : sample Rowley Crossworks for ARM project (compatible with [pico-debug](https://github.com/majbthrd/pico-debug) and using CMSIS conventions)
 
+[pico-ses](./pico-ses/README.md) : sample SEGGER Embedded Studio project (compatible with [pico-debug](https://github.com/majbthrd/pico-debug) and using CMSIS conventions)
+

@@ -1,0 +1,62 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="pico-ses" target="8" version="2">
+  <project Name="pico-ses">
+    <configuration
+      CMSIS_CORE="Yes"
+      LIBRARY_IO_TYPE="RTT"
+      Name="Common"
+      arm_architecture="v6M"
+      arm_compiler_variant="gcc"
+      arm_core_type="Cortex-M0"
+      arm_endian="Little"
+      arm_fpu_type=""
+      arm_linker_heap_size="0"
+      arm_linker_process_stack_size="0"
+      arm_linker_stack_size="2048"
+      arm_linker_variant="SEGGER"
+      arm_rtl_variant="SEGGER"
+      arm_simulator_memory_simulation_parameter="RWX 10000000,00200000,FFFFFFFF;RWX 20000000,0003C000,CDCDCDCD"
+      arm_target_device_name="Cortex-M0+"
+      arm_target_interface_type="SWD"
+      c_user_include_directories="./Source/;./Source/rp2040/"
+      debug_stack_pointer_start="__stack_end__"
+      debug_target_connection="GDB Server"
+      gcc_entry_point="Reset_Handler"
+      gdb_server_allow_memory_access_during_execution="Yes"
+      gdb_server_autostart_server="No"
+      gdb_server_command_line=""
+      gdb_server_ignore_checksum_errors="No"
+      gdb_server_port="3333"
+      gdb_server_register_access="General and Individual"
+      gdb_server_reset_command="reset halt"
+      gdb_server_type="OpenOCD"
+      link_linker_script_file="Setup/RP2040_Flash.icf"
+      linker_keep_symbols="_vectors;bs2"
+      linker_output_format="hex"
+      linker_section_placements_segments="FLASH1 RX 0x10000000 0x00200000;RAM1 RWX 0x20000000 0x0003C000"
+      project_directory=""
+      project_type="Executable" />
+    <folder Name="Source">
+      <file file_name="Source/main.c" />
+    </folder>
+    <folder Name="Setup">
+      <file file_name="Setup/RP2040_Flash.icf" />
+    </folder>
+    <folder Name="System">
+      <file file_name="System/SEGGER_THUMB_Startup.s" />
+      <file file_name="System/RP2040_Startup.s" />
+      <file file_name="System/system_rp2040.c" />
+    </folder>
+  </project>
+  <configuration
+    Name="Debug"
+    c_preprocessor_definitions="DEBUG"
+    gcc_debugging_level="Level 3"
+    gcc_optimization_level="None" />
+  <configuration
+    Name="Release"
+    c_preprocessor_definitions="NDEBUG"
+    gcc_debugging_level="Level 2"
+    gcc_omit_frame_pointer="Yes"
+    gcc_optimization_level="Level 2 balanced" />
+</solution>
