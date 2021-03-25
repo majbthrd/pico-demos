@@ -62,7 +62,7 @@ $(BUILD)/$(BIN).uf2: $(BUILD)/$(BIN).elf $(BUILD)/elf2uf2$(EXE_SUFFIX)
 
 $(BUILD)/elf2uf2$(EXE_SUFFIX): ./elf2uf2/main.cpp
 	@echo compile ELF2UF2 $@
-	g++ $^ -o $@
+	g++ -std=c++11 $^ -o $@
 
 %.o:
 	@echo CC $@
